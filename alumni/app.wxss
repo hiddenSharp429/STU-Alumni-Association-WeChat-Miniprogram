@@ -1,0 +1,58 @@
+@import "./style/iconfont.wxss";
+
+.privacyActBox {
+    width: 600rpx;
+    height: 1200rpx;
+}
+
+.privacyActTitle {
+    width: 100%;
+    font-size: 50rpx;
+    text-align: center;
+    height: 106rpx;
+    padding-top: 90rpx;
+}
+
+.privacyActContent {
+    height: 874rpx;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+}
+
+.privacyActButton {
+    height: 126rpx;
+}
+
+.ContentItem {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+}
+
+.ContentTitle {
+    font-size: 28rpx;
+}
+
+.ContentBottom {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+}
+/* 隐私条例的两个按钮 */
+.button-disagree {
+    font-weight: 600;
+    color: rgb(32, 32, 32);
+    border: 5rpx solid whitesmoke;
+    box-shadow: 16rpx 8rpx 24rpx rgba(24, 10, 10, 0.25);
+    background-color: #ffffffb9;
+    float: left;
+    font-size: 24rpx;
+}
+
+.button-agree {
+    font-weight: 600;
+    color: rgb(32, 32, 32);
+    border: 5rpx solid whitesmoke;
+    box-shadow: 16rpx 8rpx 24rpx rgba(24, 10, 10, 0.25);
+    background-color: #ffffffb9;
+    float: right;
+    font-size: 24rpx
+}

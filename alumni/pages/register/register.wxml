@@ -1,0 +1,3 @@
+<input bindinput="getAccount" type="text" placeholder="{{tip}}" class="input0" />
+<input bindinput="getPassword" type="text" placeholder="{{password}}" class="input1" />
+<button bindtap="submit" class="button2">注册</button>
