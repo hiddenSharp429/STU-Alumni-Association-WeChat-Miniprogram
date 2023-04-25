@@ -1,0 +1,107 @@
+page {
+    background-color: #B0C9E5;
+}
+/* 最外层盒子 */
+.container {
+    display: flex;
+    align-items: center;
+    padding: 35rpx;
+}
+
+/* 表单盒子 */
+.content {
+    background-color: #ffffff;
+    width: 690rpx;
+    margin: auto;
+    /* flex-direction: column; */
+    /* flex-direction: column;
+    align-items: center; 用于内容的居中*/
+    border-radius: 10px 10px 10px;
+}
+/* 必填项 */
+.subtitle {
+    margin-top: 20rpx;
+    /* margin-left: 23px; */
+    font-size: 36rpx;
+    font-weight: 400;
+}
+.subtitle1{
+    margin-top: 20rpx;
+    font-size: 36rpx;
+    font-weight: 400;
+}
+
+.subtitle::after {
+    content: '*';
+    color: red;
+}
+  /* 小标题内容 */
+  .subtitle_font{
+    font-size: 36rpx;
+    font-weight: 400;
+    color: #2a1ece;
+  }
+  /* 包裹输入框 */
+.input00 {
+    /* border-radius: 25px; */
+    display: flex;
+    padding: 15rpx;
+    /* 上左下右 */
+    margin: -10rpx 60rpx -10rpx 40rpx;
+    border-bottom: 1px solid #e6e8f2;
+    /* background-color: #1ad1d1; */
+}
+
+/* 输入框 */
+.input0 {
+    /* border-radius: 25px; */
+    /* display: flex; */
+    position: absolute;
+    padding: 15rpx;
+    right: 0;
+    margin: 10rpx 60rpx -10rpx 0rpx;
+    color: #6f737a;
+    /* border-bottom: 1px solid #e6e8f2; */
+    /* background-color: #588cdb; */
+}
+  /* 输入框 */
+  .inputborder{
+    margin-top: 15px;
+    margin-left: 20px;
+    margin-right:20px;
+    margin-bottom: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-left: 15px;
+    padding-right:15px;
+    border-radius: 30px;
+    border: 1px solid #e6e7f2;
+  }
+  .PnameInput{
+  border: 1px solid white;
+  border-radius: 1%;
+  display: flex;
+  padding: 10rpx;
+  margin: 20rpx 0 20rpx 0;
+  }
+  button{
+  border-radius: 80rpx;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  color:#FFFFFF;
+  background-color: #2a1ece;
+  box-shadow: 16rpx 8rpx 24rpx rgba(32, 80, 236, 0.35);
+  }
+  
+  .comment{
+    font-size: 12px;
+    color:gray;
+    margin-left: 15px;
+    margin-right: 15px;
+  }
+  .button2 {
+    border-radius: 45rpx;
+    margin-top: 8%;
+    color: #FFFFFF;
+    background-color: #588cdb;
+}

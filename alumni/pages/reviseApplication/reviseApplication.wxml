@@ -1,0 +1,63 @@
+<view class="popMsg" wx:for="{{popMsg}}" wx:key="index">
+    <view class="space"><text class="subtitle">姓名</text> <input type="text" bindinput="getName" value="{{item.name}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput" /></view>
+    <view class="space"><text class="subtitle">性别</text> <input type="text" bindchange="getSex" value="{{item.sex}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput" /></view>
+    <view class="space"><text class="subtitle"> 联系电话</text> <input type="text" bindinput="getPhone" value="{{item.phone}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput1" /></view>
+    <view class="space">
+        <picker mode="date" start="1970" end="2023" bindchange="getGrade" fields="year">
+            <text class="subtitle">入学时间</text>
+            <view class="timeborder">{{grade}}</view>
+        </picker>
+    </view>
+    <view class="space"><text class="subtitle">专业</text><input type="text" bindinput="getMajor" value="{{item.major}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput" /></view>
+    <view class="space"><text class="subtitle">学院</text><input type="text" bindinput="getCollege" value="{{item.college}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput" /></view>
+    <view class="space"><text class="subtitle">身份证号</text><input type="text" bindinput="getIdentity" value="{{item.identity}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput1" /></view>
+    <view class="space"><text class="subtitle"> 工作单位</text><input type="text" bindinput="getWorkunit" value="{{item.workunit}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput1" /></view>
+
+    <view class="space"><text class="subtitle">职务</text><input type="text" bindinput="getPosition" value="{{item.position}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput" /></view>
+    <view class="space"><text class="subtitle"> 常用邮箱</text> <input type="text" bindinput="getEmail" value="{{item.email}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput1" /></view>
+    <view class="space">
+        <picker bindchange="getCampus" mode="selector" value="{{areanumber}}" range="{{school}}">
+            <text class="subtitle"> 到访校区</text>
+            <view class="timeborder">{{school[areanumber]}}</view>
+        </picker>
+    </view>
+    <!-- {{item.campus}} -->
+    <view class="space"><text class="subtitle"> 计划入校时间</text>
+        <picker mode="date" start="2023-03" end="2024-12" bindchange="getStartDate" fields="day">
+            <view class="timeborder">{{startDate}}
+            </view>
+            <image src="../../img/rightArrow.png" mode="aspectFit" class="img" />
+        </picker>
+    </view>
+    <view class="space">
+        <view class="subtitle">计划离校时间</view>
+        <picker mode="date" start="{{startDate}}" end="2024-12" bindchange="getEndDate" fields="day">
+            <view class="timeborder">{{endDate}}
+            </view>
+            <image src="../../img/rightArrow.png" mode="aspectFit" class="img" />
+        </picker>
+    </view>
+
+    <!-- {{item.reason}} -->
+    <!-- <view class="space"> <text class="subtitle"> 入校事由</text><input type="text" bindinput="getReason" value="{{item.reason}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput1" /></view> -->
+    <view style="padding-left: 32rpx;margin-top: 40rpx;min-height: 60rpx;display: flex;">
+        <text class="subtitle">入校事由</text>
+        <view style="width: 420rpx; position: relative;margin-top: -5rpx;margin-bottom: 20rpx;">
+            <text style="display: block; visibility: hidden; word-break: break-all; word-wrap: break-word;">{{item.reason}}</text>
+            <textarea bindinput="getReason" value="{{item.reason}}" class="input0" auto-height="true" style="height: 100%;font-size: 36rpx; width: 420rpx; position: absolute; left: 0; top: 0; overflow-y: hidden;word-break: break-all;word-wrap: break-word;" />
+        </view>
+    </view>
+
+    <view class="space"> <text class="subtitle"> 同行人姓名</text>
+        <view style="margin-left: 40rpx; color: darkgray; font-size: 36rpx;" bindtap="tip">{{item.accompanyname}}</view>
+    </view>
+    <view class="space"> <text class="subtitle"> 入校车牌</text><input type="text" bindinput="geCarnumber" value="{{item.carnumber}}" placeholder-style="color:#000;background-color:transparent" class="popMsgIntput1" /></view>
+    <view style="width: 100%; height: 80rpx; margin-top: 20rpx; border-top: 3rpx solid gray;">
+        <view style="width: 50%; height: 100%; float: left; border-right: 3rpx solid gray;" bindtap="beback">
+            <image src="../../img/back.png" style="width: 80rpx; height: 100%; padding-left: 130rpx;" />
+        </view>
+        <view style="width: 49%; height: 100%; float: right;" bindtap="back">
+            <image src="../../img/yiwancheng.png" style="width: 80rpx; height: 100%; padding-left: 150rpx;" bindtap="back" />
+        </view>
+    </view>
+</view>
