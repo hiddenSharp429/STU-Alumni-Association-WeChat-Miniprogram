@@ -194,11 +194,6 @@ Page({
 
     // 提交申请表
     getApplication(e) {
-        // var userIds = this.data.lists;
-        // var userIdsStr = userIds.join(','); //将数组转换成string串
-        // this.data.accompanyname = this.data.accompanyname0 + ',' + userIdsStr;
-        // console.log("accompanyname=" + this.data.accompanyname)
-
         let that = this
         //验证姓名是否输入
         if (!this.data.name) {

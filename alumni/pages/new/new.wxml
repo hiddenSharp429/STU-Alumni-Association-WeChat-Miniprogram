@@ -96,8 +96,8 @@
             </view>
         </view>
         <view class="privacyActButton">
-            <button class="button-disagree" style="width: 250rpx; margin-left: 20rpx; margin-top: 10rpx;" bindtap="PopClose">我不同意</button>
-            <button class="button-agree" style="width: 250rpx; margin-right: 20rpx; margin-top: 10rpx;" bindtap="goNext" disabled="{{buttonDisabled}}">
+            <button class="button-disagree" style="width: 250rpx; margin-left: 20rpx;" bindtap="PopClose">我不同意</button>
+            <button class="button-agree" style="width: 250rpx; margin-right: 20rpx;" bindtap="goNext" disabled="{{buttonDisabled}}">
                 <view wx:if="{{!buttonDisabled}}">我同意</view>
                 <view wx:if="{{buttonDisabled}}">我同意({{countdown}})</view>
             </button>

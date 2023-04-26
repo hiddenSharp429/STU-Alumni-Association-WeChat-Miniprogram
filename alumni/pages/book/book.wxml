@@ -1,0 +1,87 @@
+<view class="container" wx:if="{{CanIGetUserPravateInfor}}">
+    <view class="content">
+        <!-- 姓名 -->
+        <view class="input00">
+            <text class="subtitle">姓名</text>
+            <input bindinput="getName" type="text" placeholder="{{tip}}" class="input0" />
+        </view>
+        <!-- 性别 -->
+        <view class="input00">
+            <view class="subtitle">性别</view>
+            <radio-group bindchange="getSex" class="sexchoose">
+                <view wx:for="{{gender}}" wx:key="index">
+                    <radio value="{{item.value}}" color="#588cdb" />
+                    <text space="nbsp">{{item.sex}} </text>
+                </view>
+            </radio-group>
+        </view>
+        <!-- 身份证号 -->
+        <view class="input00">
+            <text class="subtitle">身份证号</text>
+            <input bindinput="getIdentity" type="text" placeholder="{{tip}}" class="input0" />
+        </view>
+        <!-- 工作单位 -->
+        <view class="input00">
+            <text class="subtitle">工作单位</text>
+            <input bindinput="getWorkunit" type="text" placeholder="{{tip}}" class="input0" />
+        </view>
+        <!-- 职务 -->
+        <view class="input00">
+            <text class="subtitle">职务</text>
+            <input bindinput="getPosition" type="text" placeholder="{{tip}}" class="input0" />
+        </view>
+        <!-- 联系电话 -->
+        <view class="input00">
+            <text class="subtitle">联系电话</text>
+            <input bindinput="getPhone" type="number" placeholder="{{tip}}" class="input0" />
+        </view>
+        <!-- 通讯地址 -->
+        <view class="input00">
+            <text class="subtitle">通讯地址</text>
+            <input bindinput="getAddress" type="text" placeholder="{{tip}}" class="input0" />
+        </view>
+        <!-- 政治面貌 -->
+        <view class="input00">
+            <text class="subtitle">政治面貌</text>
+            <input bindinput="getPoliticalStatus" type="text" placeholder="{{tip}}" class="input0" />
+        </view>
+
+        <!-- 提交 -->
+        <button bindtap="submit" class="button2" style="width: 75vw; padding: 10rpx;">提交</button>
+    </view>
+</view>
+<van-popup show="{{ NoticeForUse }}">
+    <view class="privacyActBox">
+        <view class="privacyActTitle">使用须知</view>
+        <view class="privacyActContent">
+            <view class="ContentTitle">
+                欢迎使用我们的程序，为了保护您的个人隐私和数据安全，请您仔细阅读以下内容，同意该条款后方可使用本程序。
+            </view>
+            <view class="ContentItem">
+                1.本人自愿成为“ 广东省汕头大学校友会 ”会员，遵守该社会团体章程和各项规章制度，履行该社会团体赋予的权利和义务。
+            </view>
+            <view class="ContentItem">
+                <view>2.信息收集</view>
+                在您使用本程序的过程中，我们需要收集您的部分个人信息，这些信息包括但不限于：姓名、电话号码、身份证号、通讯地址等。我们仅收集与入会登记相关的信息，并严格遵守相关法规和政策要求，对所有收集到的信息进行保密。
+            </view>
+            <view class="ContentItem">
+                <view>3.信息使用</view>
+                您提交的入申请个人信息，匹配、核对无误后，将录入到学校校友数据库系统。
+            </view>
+            <view class="ContentItem">
+                <view>4.信息保护</view>
+                我们将采取合理措施来保护您的个人信息安全，如果您发现您的个人信息存在泄露或其他安全问题，请立即与我们联系，联系电话：86502180。
+            </view>
+            <view class="ContentBottom">
+                如您同意以上内容，请选择“我同意”；如果您不同意以上内容，您可以选择“我不同意”并停止使用本程序。
+            </view>
+        </view>
+        <view class="privacyActButton">
+            <button class="button-disagree" style="width: 250rpx; margin-left: 20rpx;" bindtap="back">我不同意</button>
+            <button class="button-agree" style="width: 250rpx; margin-right: 20rpx;" bindtap="goNext" disabled="{{buttonDisabled}}">
+                <view wx:if="{{!buttonDisabled}}">我同意</view>
+                <view wx:if="{{buttonDisabled}}">我同意({{countdown}})</view>
+            </button>
+        </view>
+    </view>
+</van-popup>

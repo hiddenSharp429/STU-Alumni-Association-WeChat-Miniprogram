@@ -5,7 +5,8 @@ Page({
         openid: "",
         secret: false,
         key: "",
-        keyWord: "STUxyh2023"
+        keyWord: "STUxyh2023",
+        isTeacherChen:false
     },
     onLoad(options) {
         setTimeout(() => {
@@ -22,7 +23,7 @@ Page({
         return {
             title: '汕大校友服务平台',
             path: '/pages/index/index',
-            imageUrl:'https://i.328888.xyz/2023/04/10/imlYRx.png'
+            imageUrl: 'https://i.328888.xyz/2023/04/10/imlYRx.png'
         }
     },
     //判断教师还是学生
@@ -41,10 +42,16 @@ Page({
                     })
                     .get()
                     .then(res => {
-                        console.log(res)
+                        console.log(res.data[0]._openid)
                         if (res.data.length != 0) {
                             this.setData({
                                 isteacher: true
+                            })
+                        }
+                        //验证是否为陈仕达老师
+                        if(res.data[0]._openid == "on13K4sc5xZZGvDbCR_10eLcB_U8"){
+                            this.setData({
+                                isTeacherChen:true
                             })
                         }
                     })
@@ -125,33 +132,106 @@ Page({
         //订阅消息获取教师同意，同意一次就可以下发订阅消息一次
         wx.requestSubscribeMessage({
             tmplIds: ['qGfwJO3J7Ei5bYrVTaGc5ONmrkdm0YRwKMF17QIwmAY'],
-            success (res) {
-             },
-            fail(res){
+            success(res) {},
+            fail(res) {
                 console.log("失败")
             },
-            complete(){
+            complete() {
                 wx.navigateTo({
                     url: '../approval/approval',
                 })
             }
-          })
+        })
+    },
+    goBook() {
+        let that = this
+        wx.login({
+            success(e) {
+                console.log(e.code)
+                that.setData({
+                    wxCode: e.code
+                })
+                console.log(that.data.wxCode)
+                wx.showModal({
+                    title: '温馨提示',
+                    content: '微信授权登录后才能正常使用小程序功能',
+                    cancelText: '拒绝',
+                    confirmText: '同意',
+                    success(res) {
+                        console.log(res.confirm)
+                        //调用微信小程序的获取用户信息的接口
+                        if (res.confirm) {
+                            that.setData({
+                                popShow: true
+                            })
+                            wx.getUserProfile({
+                                desc: '用于完善会员资料', // 声明获取用户个人信息后的用途
+                                lang: 'zh_CN',
+                                success(info) {
+                                    console.log(info)
+                                    setTimeout(() => {
+                                        wx.navigateTo({
+                                            url: '../book/book',
+                                            success() {
+                                                that.setData({
+                                                    popShow: false
+                                                })
+                                            }
+                                        })
+                                    }, 0);
+                                },
+                                fail(e) {
+                                    console.log('获取用户信息失败', e)
+                                }
+                            })
+                            // 获取用户的openid
+                            wx.cloud.callFunction({
+                                name: "backOpenID",
+                                success: (res) => {
+                                    console.log(res.result.openid)
+                                }
+                            })
+                        } else return
+                    },
+                    fail() {
+                        console.log("拒绝")
+                    },
+                    complete() {}
+                })
+
+            },
+            fail(e) {
+                console.log('fail', e)
+                wx.showToast({
+                    title: '网络异常',
+                    duration: 2000
+                })
+                return
+            }
+        })
+
     },
     goApprovalOptions() {
         //订阅消息获取教师同意，同意一次就可以下发订阅消息一次
         wx.requestSubscribeMessage({
             tmplIds: ['qGfwJO3J7Ei5bYrVTaGc5ONmrkdm0YRwKMF17QIwmAY'],
-            success (res) { },
-            fail(res){
+            success(res) {},
+            fail(res) {
                 console.log("失败")
             },
-            complete(){
+            complete() {
                 wx.navigateTo({
                     url: '../approvalOptions/approvalOptions',
                 })
             }
-          })
+        })
 
+    },
+    //前往审核入会登记页面
+    goApprovalBook(){
+        wx.navigateTo({
+          url: '../approvalBook/approvalBook',
+        })
     },
     goCompanions() {
         let that = this
