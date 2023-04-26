@@ -2,11 +2,13 @@
     "cloud": true,
     "pages": [
         "pages/index/index",
+        "pages/book/book",
         "pages/new/new",
         "pages/application/application",
         "pages/reviseApplication/reviseApplication",
         "pages/goTeacher/goTeacher",
         "pages/approval/approval",
+        "pages/approvalBook/approvalBook",
         "pages/isApproval/isApproval",
         "pages/goCompanions/goCompanions",
         "pages/companionsApplication/companionsApplication",

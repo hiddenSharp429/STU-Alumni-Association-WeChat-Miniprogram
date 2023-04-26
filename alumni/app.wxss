@@ -2,7 +2,7 @@
 
 .privacyActBox {
     width: 600rpx;
-    height: 1200rpx;
+    min-height: 1200rpx;
 }
 
 .privacyActTitle {
@@ -45,6 +45,7 @@
     background-color: #ffffffb9;
     float: left;
     font-size: 24rpx;
+    margin-top: 10rpx;
 }
 
 .button-agree {
@@ -54,5 +55,6 @@
     box-shadow: 16rpx 8rpx 24rpx rgba(24, 10, 10, 0.25);
     background-color: #ffffffb9;
     float: right;
-    font-size: 24rpx
+    font-size: 24rpx;
+    margin-top: 10rpx;
 }

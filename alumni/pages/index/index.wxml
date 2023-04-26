@@ -1,28 +1,35 @@
-<image class="logo" src="https://i.328888.xyz/2023/04/01/i2tHXZ.png" mode="" bindtap="enterSecretChannel"/>
+<image class="logo" src="https://i.328888.xyz/2023/04/01/i2tHXZ.png" mode="" bindtap="enterSecretChannel" />
 <!-- 图片太大所以上传到了图床，这是它的url地址：https://i.328888.xyz/2023/03/29/ikz5UF.png -->
-<image class="background" src="https://i.328888.xyz/2023/03/29/ikz5UF.png" mode="heightFix"/>
+<image class="background" src="https://i.328888.xyz/2023/03/29/ikz5UF.png" mode="heightFix" />
 <view style="z-index: 999; width: 100%; position: absolute; bottom: 100rpx;">
     <view wx:if="{{!isteacher}}">
+        <button bindtap="goBook" class="button5,font" style="width: 380rpx; height: 80rpx;">入会登记</button>
         <button bindtap="goNew" class="button1,font" style="width: 380rpx; height: 80rpx;">汕大校友</button>
         <button class="button2,font" bindtap="goCompanions" style="width: 380rpx; height: 80rpx;">校友同行人</button>
-        <!-- <button  class="button5" bindtap="goTeacherRegister">教师注册</button> -->
     </view>
     <view wx:if="{{isteacher}}">
-        <button  class="button3,font" bindtap="goTeacher" style="width: 380rpx; height: 80rpx;">审批校友<image src="../../img/sign-review.png" mode=""/></button>
-        <button  class="button4,font" bindtap="goApprovalOptions" wx:if="{{isteacher}}" style="width: 380rpx; height: 80rpx;">审批非校友 <image src="../../img/sign-review-full.png" mode=""/></button>
+        <button wx:if="{{isTeacherChen}}" bindtap="goApprovalBook" class="button5,font" style="width: 380rpx; height: 80rpx;">审核登记
+            <image src="../../img/sign-review-full.png" mode="" />
+        </button>
+        <button class="button3,font" bindtap="goTeacher" style="width: 380rpx; height: 80rpx;">审批校友
+            <image src="../../img/sign-review.png" mode="" />
+        </button>
+        <button class="button4,font" bindtap="goApprovalOptions" wx:if="{{isteacher}}" style="width: 380rpx; height: 80rpx;">审批非校友
+            <image src="../../img/sign-review-full.png" mode="" />
+        </button>
     </view>
 </view>
 <!-- loading动画 -->
 <van-popup show="{{ popShow }}" position="top" custom-style="height: 300rpx;" round>
-        <view class="loadingBox"  style="margin-top: 150rpx;">
-                <view class="loader-dots">
-                <view></view>
-                <view></view>
-                <view></view>
-                <view></view>
-                <view></view>
-                </view>
-        </view> 
+    <view class="loadingBox" style="margin-top: 150rpx;">
+        <view class="loader-dots">
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+            <view></view>
+        </view>
+    </view>
 </van-popup>
 <!-- 注册账号秘密通道 -->
 <van-popup show="{{ secret }}" bind:close="onClose" round closeable>
@@ -32,9 +39,9 @@
         </view>
         <view style="border: 2rpx solid grey; background-color: rgb(192, 192, 192); width: 500rpx; margin-left: 50rpx; height: 160rpx; margin-top: 40rpx; border-radius: 40rpx;">
             <view style="margin-top: 40rpx;">
-                <input type="password" style="font-size: 40rpx; width: 400rpx; float: left; margin-left: 20rpx; margin-top: 15rpx;" bindinput="inputKey"/>
+                <input type="password" style="font-size: 40rpx; width: 400rpx; float: left; margin-left: 20rpx; margin-top: 15rpx;" bindinput="inputKey" />
                 <view style="width: 60rpx; float: right; margin-right: 20rpx;" bindtap="enterSecret">
-                    <van-icon name="arrow" size="80rpx"/>
+                    <van-icon name="arrow" size="80rpx" />
                 </view>
             </view>
         </view>
