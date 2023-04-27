@@ -1,8 +1,8 @@
 # Alumni-miniprogram
 #### 当前版本V1.3.1
 ##### 更新内容：
-- test
-- .....
+- this is a test
+- hello github
 ---
 #### 先前版本V1.3.0
 ##### 更新内容：
