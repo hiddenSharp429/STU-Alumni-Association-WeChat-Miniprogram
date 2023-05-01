@@ -94,7 +94,7 @@ Page({
     getMsg() {
         // console.log(this.data.changeIsready)
         wx.cloud.database().collection("member")
-            .orderBy('startDate', "asc")
+            .orderBy('currentTime', "asc")
             .where({
                 isready: this.data.isready,
             })
@@ -102,6 +102,7 @@ Page({
             .limit(20)
             .get()
             .then(res => {
+                console.log("1", res)
                 this.setData({
                     msg: res.data,
                 })
