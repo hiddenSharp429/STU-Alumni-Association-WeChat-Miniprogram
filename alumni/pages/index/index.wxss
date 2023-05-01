@@ -104,6 +104,7 @@
  }
 
  .button5 {
+     font-size: 36rpx;
      border-radius: 40rpx;
      margin-top: 8%;
      color: #FFFFFF;
