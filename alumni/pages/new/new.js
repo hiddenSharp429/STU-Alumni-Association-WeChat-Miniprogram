@@ -42,7 +42,6 @@ Page({
     onLoad() {
         wx.startPullDownRefresh()
         this.getList()
-        // this.isrevise()
     },
     goApplication() {
         let that = this

@@ -99,9 +99,10 @@
                 </view>
             </view>
         </view>
-        <!-- 申请盒子的背景图片 -->
-        <image class="img000" src="https://i.328888.xyz/2023/04/01/i2t208.png" mode="scaleToFill" />
-        <image class="img00" src="https://i.328888.xyz/2023/04/01/i2tVaw.png" mode="aspectFit" style="height: 100%" />
+
+      <!-- 申请盒子的背景图片 -->
+      <image class="img000" src="https://s2.loli.net/2023/05/15/gkyf9FrQouj1cCl.png" mode="scaleToFill" />
+        <image class="img00" src="https://s2.loli.net/2023/05/15/y9LSnzTptM7QVKo.png" mode="aspectFit" style="height: 100%" />
     </view>
     <!-- 换页按钮 -->
     <view wx:if="{{total>20}}" style="height: 4%; margin-top: 1%;">

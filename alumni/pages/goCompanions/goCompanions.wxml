@@ -31,14 +31,14 @@
                 <view class="reviewText">驳回</view>
             </view>
         </view>
-        <view style="width: 140rpx; height: 70rpx; position: absolute; bottom: 0%; right: 0%;" >
-            <image src="../../img/delete.png" class="delete" bindtap="delete" data-_id="{{item._id}}"/>
-            <image src="../../img/xiugai.png" class="revise" bindtap="revise" wx:if="{{item.isready == 0 || item.isready == 2}}" data-_id="{{item._id}}"/>
+        <view style="width: 140rpx; height: 70rpx; position: absolute; bottom: 0%; right: 0%;">
+            <image src="../../img/delete.png" class="delete" bindtap="delete" data-_id="{{item._id}}" />
+            <image src="../../img/xiugai.png" class="revise" bindtap="revise" wx:if="{{item.isready == 0 || item.isready == 2}}" data-_id="{{item._id}}" />
         </view>
     </view>
     <!-- 申请盒子的背景图片 -->
-    <image class="img000" src="https://i.328888.xyz/2023/04/01/i2t208.png" mode="scaleToFill" />
-    <image class="img00" src="https://i.328888.xyz/2023/04/01/i2tVaw.png" mode="aspectFit" style="height: 100%;" />
+    <image class="img000" src="https://s2.loli.net/2023/05/15/gkyf9FrQouj1cCl.png" mode="scaleToFill" />
+    <image class="img00" src="https://s2.loli.net/2023/05/15/y9LSnzTptM7QVKo.png" mode="aspectFit" style="height: 100%" />
 </view>
 <view>
     <image src="../../img/jiahao.png" mode="" class="img0" bindtap="goApplication" />
