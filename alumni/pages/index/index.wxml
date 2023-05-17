@@ -1,6 +1,6 @@
-<image class="logo" src="https://i.328888.xyz/2023/04/01/i2tHXZ.png" mode="" bindtap="enterSecretChannel" />
+<image class="logo" src="https://s2.loli.net/2023/05/16/wMZxNI3J6DTf4Bj.png" mode="" bindtap="enterSecretChannel" />
 <!-- 图片太大所以上传到了图床，这是它的url地址：https://i.328888.xyz/2023/03/29/ikz5UF.png -->
-<image class="background" src="https://i.328888.xyz/2023/03/29/ikz5UF.png" mode="heightFix" />
+<image class="background" src="https://s2.loli.net/2023/05/16/KSpb51WdVroczDL.png" mode="heightFix" />
 <view style="z-index: 999; width: 100%; position: absolute; bottom: 100rpx;">
     <view wx:if="{{!isteacher}}">
         <button bindtap="goBook" class="button5,font" style="width: 380rpx; height: 80rpx;">入会登记</button>
@@ -19,18 +19,7 @@
         </button>
     </view>
 </view>
-<!-- loading动画 -->
-<van-popup show="{{ popShow }}" position="top" custom-style="height: 300rpx;" round>
-    <view class="loadingBox" style="margin-top: 150rpx;">
-        <view class="loader-dots">
-            <view></view>
-            <view></view>
-            <view></view>
-            <view></view>
-            <view></view>
-        </view>
-    </view>
-</van-popup>
+<loading id="my-loading"></loading>
 <!-- 注册账号秘密通道 -->
 <van-popup show="{{ secret }}" bind:close="onClose" round closeable>
     <view style="width: 600rpx; height: 400rpx; border-radius: 20rpx; border: 2rpx solid blue">

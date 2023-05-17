@@ -37,7 +37,7 @@
         </view>
         <!-- 学院 -->
         <view class="input00">
-            <text class="subtitle1">学院</text>
+            <text class="subtitle">学院</text>
             <input bindinput="getCollege" type="text" placeholder="{{tip}}" class="input0" />
         </view>
         <!-- 身份证号 -->

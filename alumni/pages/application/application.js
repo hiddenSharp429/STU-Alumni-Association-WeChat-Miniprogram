@@ -256,6 +256,14 @@ Page({
             })
             return false;
         }
+        //验证学院是否输入
+        if (!this.data.college) {
+            wx.showToast({
+                title: '请输入学院',
+                icon: "none",
+            })
+            return false;
+        }
         //验证工作单位是否输入
         if (!this.data.workunit) {
             wx.showToast({
@@ -365,23 +373,23 @@ Page({
             .get()
             .then(res => {
                 let i;
-                for(i=0;i<res.data.length;i++){
+                for (i = 0; i < res.data.length; i++) {
                     console.log(res.data[i]._openid)
-                wx.cloud.callFunction({
-                    name: 'Reminder',
-                    data: {
-                        openid: res.data[i]._openid,
-                        userName: this.data.name,
-                        startDate: this.data.startDate,
-                        remark:'无'
-                    },
-                })
-                .then(res => {
-                    console.log("调用成功", res)
-                })
-                .catch(err => {
-                    console.log("请求云函数失败", err)
-                })
+                    wx.cloud.callFunction({
+                            name: 'Reminder',
+                            data: {
+                                openid: res.data[i]._openid,
+                                userName: this.data.name,
+                                startDate: this.data.startDate,
+                                remark: '无'
+                            },
+                        })
+                        .then(res => {
+                            console.log("调用成功", res)
+                        })
+                        .catch(err => {
+                            console.log("请求云函数失败", err)
+                        })
                 }
             })
     }
