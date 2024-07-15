@@ -1,0 +1,31 @@
+{
+    "cloudfunctionRoot": "cloud/",
+    "compileType": "miniprogram",
+    "setting": {
+        "coverView": true,
+        "es6": true,
+        "postcss": true,
+        "minified": true,
+        "enhance": true,
+        "showShadowRootInWxmlPanel": true,
+        "packNpmRelationList": [],
+        "babelSetting": {
+            "ignore": [],
+            "disablePlugins": [],
+            "outputPath": ""
+        },
+        "ignoreUploadUnusedFiles": false,
+        "condition": false
+    },
+    "condition": {},
+    "editorSetting": {
+        "tabIndent": "insertSpaces",
+        "tabSize": 4
+    },
+    "cloudfunctionTemplateRoot": "cloudfunctionTemplate/",
+    "packOptions": {
+        "ignore": [],
+        "include": []
+    },
+    "appid": "wxf914d7bf204dacc7"
+}
