@@ -1,6 +1,0 @@
-{
-    "usingComponents": {
-        "van-popup": "@vant/weapp/popup/index"
-    },
-    "navigationBarTitleText": "入会登记"
-}

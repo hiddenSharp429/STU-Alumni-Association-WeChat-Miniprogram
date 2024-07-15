@@ -1,7 +1,0 @@
-{
-    "navigationBarTitleText": "汕大同行人返校申请",
-    "usingComponents": {
-        "van-tabbar": "@vant/weapp/tabbar/index",
-          "van-tabbar-item": "@vant/weapp/tabbar-item/index"
-    }
-}

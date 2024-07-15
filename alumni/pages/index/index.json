@@ -1,9 +1,0 @@
-{
-    "usingComponents": {
-      "van-popup": "@vant/weapp/popup/index",
-      "van-divider": "@vant/weapp/divider/index",
-      "van-icon": "@vant/weapp/icon/index",
-      "loading": "/components/loading/loading"
-    },
-    "navigationStyle": "custom"
-  }
