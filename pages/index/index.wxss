@@ -1,0 +1,125 @@
+ /* pages/next/next.wxss */
+ page {
+     display: block;
+
+ }
+
+ .background {
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     background-size: 100% 100%;
+ }
+
+ .logo {
+     top: 160rpx;
+     left: 40rpx;
+     z-index: 99;
+     position: absolute;
+     height: 60rpx;
+     width: 300rpx;
+ }
+
+ /* @font-face {
+    font-family: "阿里巴巴普惠体 2.0 65 Medium";
+    src:url("//at.alicdn.com/wf/webfont/99MVIjhM6qkK/tQg7UlvQk1xV.woff") format("woff");
+    font-display: swap;
+  } */
+ .font {
+     font-size: 20;
+     font-family: "阿里巴巴普惠体 2.0 65 Medium";
+ }
+
+ .button1 {
+     font-size: 36rpx;
+     margin-top: 0%;
+     border-radius: 40rpx;
+     color: #3A95E4;
+     background-color: #FFFFFF;
+     box-shadow: 1rpx 8rpx 8rpx #aaa89d;
+ }
+
+ .button2 {
+     font-size: 36rpx;
+     border-radius: 40rpx;
+     margin-top: 4%;
+     color: #FFFFFF;
+     background-color: #3A95E4;
+     box-shadow: 5rpx 8rpx 8rpx #aaa89d;
+ }
+
+ .button1 {
+     font-size: 36rpx;
+     margin-top: 4%;
+     border-radius: 40rpx;
+     color: #3A95E4;
+     background-color: #FFFFFF;
+     box-shadow: 1rpx 8rpx 8rpx #aaa89d;
+ }
+
+ .button2 {
+     font-size: 36rpx;
+     border-radius: 40rpx;
+     margin-top: 4%;
+     color: #FFFFFF;
+     background-color: #3A95E4;
+     box-shadow: 5rpx 8rpx 8rpx #aaa89d;
+
+ }
+
+ .button3 {
+     font-size: 36rpx;
+     border-radius: 40rpx;
+     margin-top: 4%;
+     color: #FFFFFF;
+     background-color: #588cdb;
+     box-shadow: 16rpx 10rpx 22rpx rgba(0, 36, 243, 0.15);
+
+ }
+
+ .button3 image {
+     position: absolute;
+     width: 40rpx;
+     height: 40rpx;
+     color: white;
+     right: 50rpx;
+ }
+
+ .button4 {
+     font-size: 36rpx;
+     border-radius: 40rpx;
+     margin-top: 4%;
+     color: #FFFFFF;
+     background-color: #325e99;
+     box-shadow: 16rpx 10rpx 22rpx rgba(0, 36, 243, 0.15);
+
+ }
+
+ .button4 image {
+     position: absolute;
+     width: 40rpx;
+     height: 40rpx;
+     color: white;
+     right: 50rpx;
+ }
+
+ .button5 {
+     font-size: 36rpx;
+     border-radius: 40rpx;
+     margin-top: 8%;
+     color: #FFFFFF;
+     background-color: #325e99;
+     box-shadow: 16rpx 10rpx 22rpx rgba(0, 36, 243, 0.15);
+
+ }
+
+ .button5 image {
+     position: absolute;
+     width: 40rpx;
+     height: 40rpx;
+     color: white;
+     right: 50rpx;
+ }
+
+
+ 

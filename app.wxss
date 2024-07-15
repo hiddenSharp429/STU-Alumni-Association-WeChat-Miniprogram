@@ -1,0 +1,113 @@
+@import "./style/iconfont.wxss";
+
+.privacyActBox {
+    width: 600rpx;
+    min-height: 1200rpx;
+}
+
+.privacyActTitle {
+    width: 100%;
+    font-size: 50rpx;
+    text-align: center;
+    height: 106rpx;
+    padding-top: 90rpx;
+}
+
+.privacyActContent {
+    height: 874rpx;
+    padding-left: 50rpx;
+    padding-right: 50rpx;
+}
+
+.privacyActButton {
+    height: 126rpx;
+}
+
+.ContentItem {
+    margin-top: 10rpx;
+    font-size: 24rpx;
+}
+
+.ContentTitle {
+    font-size: 28rpx;
+}
+
+.ContentBottom {
+    margin-top: 20rpx;
+    font-size: 28rpx;
+}
+/* 隐私条例的两个按钮 */
+.button-disagree {
+    font-weight: 600;
+    color: rgb(32, 32, 32);
+    border: 5rpx solid whitesmoke;
+    box-shadow: 16rpx 8rpx 24rpx rgba(24, 10, 10, 0.25);
+    background-color: #ffffffb9;
+    float: left;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+.button-agree {
+    font-weight: 600;
+    color: rgb(32, 32, 32);
+    border: 5rpx solid whitesmoke;
+    box-shadow: 16rpx 8rpx 24rpx rgba(24, 10, 10, 0.25);
+    background-color: #ffffffb9;
+    float: right;
+    font-size: 24rpx;
+    margin-top: 10rpx;
+}
+
+/* loading盒子的样式 */
+.loadingBox {
+  padding-left: 260rpx;
+}
+
+.loader-dots view {
+  width: 40rpx;
+  height: 40rpx;
+  background: #588cdb;
+  border-radius: 30%;
+  display: inline-block;
+  animation: slide 1s infinite;
+}
+
+
+.loader-dots view:nth-child(1) {
+  animation-delay: .1s;
+}
+
+.loader-dots view:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.loader-dots view:nth-child(3) {
+  animation-delay: .3s;
+  background: linear-gradient(to bottom right, rgb(74, 65, 202), #FFFFFF)
+}
+
+.loader-dots view:nth-child(4) {
+  animation-delay: .4s;
+  background: linear-gradient(to bottom right, rgb(92, 99, 204), #FFFFFF)
+}
+
+.loader-dots view:nth-child(5) {
+  animation-delay: .5s;
+  background: linear-gradient(to bottom right, rgb(90, 99, 205), #FFFFFF)
+}
+
+@keyframes slide {
+  0% {
+      transform: scale(1)
+  }
+
+  50% {
+      opacity: 0.3;
+      transform: scale(2);
+  }
+
+  100% {
+      transform: scale(1)
+  }
+}

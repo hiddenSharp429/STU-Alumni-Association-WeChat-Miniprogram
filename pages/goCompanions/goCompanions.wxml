@@ -1,0 +1,78 @@
+<view class="pre">
+    <view class="preTip">
+        已经提交的申请信息</view>
+</view>
+<view class="pastApplication" wx:for="{{form}}" wx:key="index" style="height: 210rpx; background-color: white;">
+    <!-- 文字信息 -->
+    <view class="detailApplication,font">
+        <view>姓名：{{item.name}}</view>
+        <view class="applicationTime,font">联系电话：{{item.number}}</view>
+        <view class="applicationTime,font">同行校友：{{item.othername}}</view>
+    </view>
+    <!-- 状态信息 -->
+    <view class="stateBox">
+        <!-- 审核中 -->
+        <view class="stateContent" wx:if="{{item.isready==0}}">
+            <view class="circle" style="background-color:#FFBC00 ;"></view>
+            <view class="underApplication">
+                <view class="reviewText">审核中</view>
+            </view>
+        </view>
+        <!-- 审核通过 -->
+        <view class="stateContent" wx:if="{{item.isready==1}}">
+            <view class="circle" style="background-color:#4debae ;"></view>
+            <view class="approvedApplication">
+                <view class="reviewText">已通过</view>
+            </view>
+        </view>
+        <view class="stateContent" wx:if="{{item.isready==2}}">
+            <view class="circle" style="background-color:#ff0000 ;"></view>
+            <view class="disapprove">
+                <view class="reviewText">驳回</view>
+            </view>
+        </view>
+        <view style="width: 140rpx; height: 70rpx; position: absolute; bottom: 0%; right: 0%;">
+            <image src="../../img/delete.png" class="delete" bindtap="delete" data-_id="{{item._id}}" />
+            <image src="../../img/xiugai.png" class="revise" bindtap="revise" wx:if="{{item.isready == 0 || item.isready == 2}}" data-_id="{{item._id}}" />
+        </view>
+    </view>
+    <!-- 申请盒子的背景图片 -->
+    <image class="img000" src="https://s2.loli.net/2023/05/15/gkyf9FrQouj1cCl.png" mode="scaleToFill" />
+    <image class="img00" src="https://s2.loli.net/2023/05/15/y9LSnzTptM7QVKo.png" mode="aspectFit" style="height: 100%" />
+</view>
+<view>
+    <image src="../../img/jiahao.png" mode="" class="img0" bindtap="goApplication" />
+</view>
+
+<van-popup show="{{ ApplyShow }}" bind:close="PopClose">
+    <view class="privacyActBox">
+        <view class="privacyActTitle">使用须知</view>
+        <view class="privacyActContent">
+            <view class="ContentTitle">
+                欢迎使用我们的程序，为了保护您的个人隐私和数据安全，请您仔细阅读以下内容，同意该条款后方可使用本程序。
+            </view>
+            <view class="ContentItem">
+                <view>1.信息收集</view>
+                在您使用本程序的过程中，我们需要收集您的部分个人信息，这些信息包括但不限于：姓名、电话号码、身份证号、常用邮箱等。我们仅收集与程序功能相关的信息，并严格遵守相关法规和政策要求，对所有收集到的信息进行保密。
+            </view>
+            <view class="ContentItem">
+                <view>2.信息使用</view>
+                您提交的个人信息，匹配、核对无误后，将录入到学校访客系统及校友数据库系统。
+            </view>
+            <view class="ContentItem">
+                <view>3.信息保护</view>
+                我们将采取合理措施来保护您的个人信息安全，如果您发现您的个人信息存在泄露或其他安全问题，请立即与我们联系，联系电话：86502180。
+            </view>
+            <view class="ContentBottom">
+                如您同意以上内容，请选择“我同意”；如果您不同意以上内容，您可以选择“我不同意”并停止使用本程序。
+            </view>
+        </view>
+        <view class="privacyActButton">
+            <button class="button-disagree" style="width: 250rpx; margin-left: 20rpx; margin-top: 10rpx;" bindtap="PopClose">我不同意</button>
+            <button class="button-agree" style="width: 250rpx; margin-right: 20rpx; margin-top: 10rpx;" bindtap="goNext" disabled="{{buttonDisabled}}">
+                <view wx:if="{{!buttonDisabled}}">我同意</view>
+                <view wx:if="{{buttonDisabled}}">我同意({{countdown}})</view>
+            </button>
+        </view>
+    </view>
+</van-popup>

@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-popup": "@vant/weapp/popup/index"
+    },
+    "navigationBarTitleText": "汕大人返校申请"
+}

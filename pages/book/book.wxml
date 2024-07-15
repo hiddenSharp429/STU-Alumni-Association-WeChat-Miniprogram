@@ -1,0 +1,194 @@
+<view class="container" wx:if="{{CanIGetUserPravateInfor && Page}}">
+    <view class="content">
+        <!-- 姓名 -->
+        <view class="input00">
+            <text class="subtitle">姓名</text>
+            <input bindinput="getName" type="text" placeholder="{{tip}}" class="input0" value="{{name}}"/>
+        </view>
+        <!-- 性别 -->
+        <view class="input00">
+            <view class="subtitle">性别</view>
+            <radio-group bindchange="getSex" class="sexchoose">
+                <view wx:for="{{gender}}" wx:key="index">
+                    <radio value="{{item.value}}" color="#588cdb" />
+                    <text space="nbsp">{{item.sex}} </text>
+                </view>
+            </radio-group>
+        </view>
+        <!-- 身份证号 -->
+        <view class="input00">
+            <text class="subtitle">身份证号</text>
+            <input bindinput="getIdentity" type="text" placeholder="{{tip}}" class="input0" value="{{identity}}"/>
+        </view>
+        <!-- 入学时间 -->
+        <view class="input00">
+            <view class="subtitle">入学时间</view>
+            <picker mode="date" start="1970" end="2023" bindchange="getGrade" fields="year">
+                <view class="timeborder">
+                    {{grade}}
+                </view>
+                <image src="../../img/rightArrow.png" mode="aspectFit" class="img" />
+            </picker>
+        </view>
+        <!-- 培养层次 -->
+        <view class="input00">
+            <text class="subtitle">培养层次</text>
+            <input bindinput="getDegree" type="text" placeholder="专科、本科、硕士、博士、其他" placeholder-style="font-size:22rpx" class="input0" />
+        </view>
+        <!-- 专业 -->
+        <view class="input00">
+            <text class="subtitle">专业</text>
+            <input bindinput="getMajor" type="text" placeholder="{{tip}}" class="input0" value="{{major}}"/>
+        </view>
+        <!-- 学院 -->
+        <view class="input00">
+            <text class="subtitle">学院</text>
+            <input bindinput="getCollege" type="text" placeholder="{{tip}}" class="input0" value="{{college}}"/>
+        </view>
+        <!-- 所属校友会 -->
+        <view class="input00">
+            <text class="subtitle">所属校友会</text>
+            <input bindinput="getAlumni" type="text" placeholder="{{tip}}" class="input0" value="{{alumni}}"/>
+        </view>
+        <!-- 工作单位 -->
+        <view class="input00">
+            <text class="subtitle">工作单位</text>
+            <input bindinput="getWorkunit" type="text" placeholder="{{tip}}" class="input0" value="{{workunit}}"/>
+        </view>
+        <!-- 职务 -->
+        <view class="input00">
+            <text class="subtitle">职务</text>
+            <input bindinput="getPosition" type="text" placeholder="{{tip}}" class="input0" value="{{position}}"/>
+        </view>
+        <!-- 联系电话 -->
+        <view class="input00">
+            <text class="subtitle">联系电话</text>
+            <input bindinput="getPhone" type="number" placeholder="{{tip}}" class="input0" value="{{phone}}"/>
+        </view>
+        <!-- 通讯地址 -->
+        <view class="input00">
+            <text class="subtitle">通讯地址</text>
+            <input bindinput="getAddress" type="text" placeholder="{{tip}}" class="input0" value="{{address}}"/>
+        </view>
+        <!-- 常用邮箱 -->
+        <view class="input00">
+            <text class="subtitle">常用邮箱</text>
+            <input bindinput="getEmail" type="text" placeholder="{{tip}}" class="input0" value="{{email}}"/>
+        </view>
+        <!-- 政治面貌 -->
+        <view class="input00">
+            <text class="subtitle">政治面貌</text>
+            <input bindinput="getPoliticalStatus" type="text" placeholder="{{tip}}" class="input0" value="{{politicalStatus}}"/>
+        </view>
+
+        <!-- 提交 -->
+        <button bindtap="submit" class="button2" style="width: 75vw; padding: 10rpx;">提交</button>
+    </view>
+</view>
+<van-popup show="{{ NoticeForUse }}">
+    <view class="privacyActBox">
+        <view class="privacyActTitle">使用须知</view>
+        <view class="privacyActContent">
+            <view class="ContentTitle">
+                欢迎使用我们的程序，为了保护您的个人隐私和数据安全，请您仔细阅读以下内容，同意该条款后方可使用本程序。
+            </view>
+            <view class="ContentItem">
+                1.本人自愿成为“ 广东省汕头大学校友会 ”会员，遵守该社会团体章程和各项规章制度，履行该社会团体赋予的权利和义务。
+            </view>
+            <view class="ContentItem">
+                <view>2.信息收集</view>
+                在您使用本程序的过程中，我们需要收集您的部分个人信息，这些信息包括但不限于：姓名、电话号码、身份证号、通讯地址等。我们仅收集与入会登记相关的信息，并严格遵守相关法规和政策要求，对所有收集到的信息进行保密。
+            </view>
+            <view class="ContentItem">
+                <view>3.信息使用</view>
+                您提交的入申请个人信息，匹配、核对无误后，将录入到学校校友数据库系统。
+            </view>
+            <view class="ContentItem">
+                <view>4.信息保护</view>
+                我们将采取合理措施来保护您的个人信息安全，如果您发现您的个人信息存在泄露或其他安全问题，请立即与我们联系，联系电话：86502180。
+            </view>
+            <view class="ContentBottom">
+                如您同意以上内容，请选择“我同意”；如果您不同意以上内容，您可以选择“我不同意”并停止使用本程序。
+            </view>
+        </view>
+        <view class="privacyActButton">
+            <button class="button-disagree" style="width: 250rpx; margin-left: 20rpx;" bindtap="back">我不同意</button>
+            <button class="button-agree" style="width: 250rpx; margin-right: 20rpx;" bindtap="goNext" disabled="{{buttonDisabled}}">
+                <view wx:if="{{!buttonDisabled}}">我同意</view>
+                <view wx:if="{{buttonDisabled}}">我同意({{countdown}})</view>
+            </button>
+        </view>
+    </view>
+</van-popup>
+<view wx:if="{{!Page}}">
+    <view class="pre">
+        <view class="preTip">
+            已经提交的入会记录</view>
+    </view>
+    <!-- 背景层 -->
+    <view class="back" wx:if="{{popUps}}" bindtap="back">
+    </view>
+    <!-- 弹出层（详情页面） -->
+    <view class="popUps,font" wx:if="{{popUps}}" wx:for="{{popUpsMsg}}" wx:key="index">
+        <!-- //修改图标 -->
+        <view style="width: 140rpx; height: 70rpx; position: absolute; bottom: 0%; right: 0%;">
+            <image src="../../img/delete.png" class="delete" bindtap="delete" />
+            <image src="../../img/xiugai.png" mode="" class="revise" bindtap="revise" wx:if="{{isready == 0 || isready == 2}}" />
+        </view>
+        <!-- 返回图标 -->
+        <image class="backImg" src="../../img/back.svg" mode="" style=" position: absolute; top: 35rpx; right: 15rpx;" bindtap="PopClose" />
+        <view class="space"> 姓名：{{item.name}}</view>
+        <view class="space"> 性别：{{item.sex}}</view>
+        <view class="space"> 身份证号：{{item.identity}}</view>
+        <view class="space"> 入学时间：{{item.grade}}</view>
+        <view class="space"> 培养层次：{{item.degree}}</view>
+        <view class="space"> 专业：{{item.major}}</view>
+        <view class="space"> 学院：{{item.college}}</view>
+        <view class="space"> 所属校友会：{{item.alumni}}</view>
+        <view class="space"> 工作单位：{{item.workunit}}</view>
+        <view class="space"> 职务：{{item.position}}</view>
+        <view class="space"> 联系电话：{{item.phone}}</view>
+        <view class="space"> 常用邮箱：{{item.email}}</view>
+        <view class="space"> 通讯地址：{{item.address}}</view>
+        <view class="space"> 政治面貌：{{item.politicalStatus}}</view>
+    </view>
+    <!-- 申请盒子 -->
+    <view class="pastApplication" wx:for="{{form}}" data-_id="{{item._id}}" wx:key="index" bindtap="popUps" style="height: 160rpx; background-color: white;">
+        <!-- 文字信息 -->
+        <view class="detailApplication">
+            <view class="font" style="font-size: 38rpx;">姓名：{{item.name}}</view>
+        </view>
+        <!-- 状态信息 -->
+        <view class="stateBox">
+            <!-- 审核中 -->
+            <view class="stateContent" wx:if="{{item.isready==0}}">
+                <view class="circle" style="background-color:#FFBC00 ;"></view>
+                <view class="underApplication">
+                    <view class="reviewText">审核中</view>
+                </view>
+            </view>
+            <!-- 审核通过 -->
+            <view class="stateContent" wx:if="{{item.isready==1}}">
+                <view class="circle" style="background-color:#4debae;"></view>
+                <view class="approvedApplication">
+                    <view class="reviewText">已通过</view>
+                </view>
+            </view>
+            <!-- 申请驳回 -->
+            <view class="stateContent" wx:if="{{item.isready==2}}">
+                <view class="circle" style="background-color:#ff0000 ;"></view>
+                <view class="disapprove">
+                    <view class="reviewText">驳回</view>
+                </view>
+            </view>
+        </view>
+        <!-- 申请盒子的背景图片 -->
+        <image class="img000" src="https://s2.loli.net/2023/05/15/gkyf9FrQouj1cCl.png" mode="scaleToFill" />
+        <image class="img00" src="https://s2.loli.net/2023/05/15/y9LSnzTptM7QVKo.png" mode="aspectFit" style="height: 100%" />
+    </view>
+
+    <!-- 有入会申请则隐藏申请按钮 -->
+    <view wx:if="{{form.length == 0}}"> 
+        <image src="../../img/jiahao.png" mode="" class="img0" bindtap="goApplication" />
+    </view>
+</view>

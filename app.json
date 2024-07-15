@@ -1,0 +1,26 @@
+{
+    "cloud": true,
+    "pages": [
+        "pages/index/index",
+        "pages/book/book",
+        "pages/new/new",
+        "pages/application/application",
+        "pages/reviseApplication/reviseApplication",
+        "pages/goTeacher/goTeacher",
+        "pages/approval/approval",
+        "pages/approvalBook/approvalBook",
+        "pages/isApproval/isApproval",
+        "pages/goCompanions/goCompanions",
+        "pages/companionsApplication/companionsApplication",
+        "pages/approvalOptions/approvalOptions",
+        "pages/register/register"
+    ],
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "Weixin",
+        "navigationBarTextStyle": "black"
+    },
+    "sitemapLocation": "sitemap.json",
+    "style":"v2"
+}

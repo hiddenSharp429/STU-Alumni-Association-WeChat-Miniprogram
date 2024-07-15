@@ -1,0 +1,7 @@
+{
+    "usingComponents": {
+        "van-cell": "@vant/weapp/cell/index",
+        "van-calendar": "@vant/weapp/calendar/index"
+    },
+    "navigationBarTitleText": "修改返校申请内容"
+}

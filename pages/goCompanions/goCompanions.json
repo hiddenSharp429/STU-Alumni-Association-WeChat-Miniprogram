@@ -1,0 +1,6 @@
+{
+    "usingComponents": {
+        "van-popup": "@vant/weapp/popup/index"
+    },
+    "navigationBarTitleText": "校友同行人申请"
+}
