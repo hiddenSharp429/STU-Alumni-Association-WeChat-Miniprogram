@@ -2,7 +2,7 @@
  * @Author: hiddenSharp429 z404878860@163.com
  * @Date: 2023-05-17 21:42:50
  * @LastEditors: hiddenSharp429 z404878860@163.com
- * @LastEditTime: 2024-07-15 15:00:08
+ * @LastEditTime: 2024-07-15 19:50:52
  * @FilePath: /StuAlumni/README.md
  * @Description: 这是默认设置,请设置`customMade`, 打开koroFileHeader查看配置 进行设置: https://github.com/OBKoro1/koro1FileHeader/wiki/%E9%85%8D%E7%BD%AE
 -->
@@ -10,7 +10,7 @@
 
 <div align="center">
   
-  [![Static Badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-%40hiddenSharp429-red)](https://github.com/hiddenSharp429/STU-Youth-League-Committee-WeChat-Mini-Program/blob/master/README_CN.md)    |  [![Static Badge](https://img.shields.io/badge/English-%40hiddenSharp429-blue)](https://github.com/hiddenSharp429/STU-Youth-League-Committee-WeChat-Mini-Program)  |    [![Online Docs](https://img.shields.io/badge/Online%20Docs-%40hiddenSharp429-brown)](https://hiddensharp429.github.io/STU-Youth-League-Committee-WeChat-Mini-Program/#/)
+  [![Static Badge](https://img.shields.io/badge/%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87-%40hiddenSharp429-red)](https://github.com/hiddenSharp429/STU-Alumni-Association-WeChat-Miniprogram/blob/master/README_CN.md)    |  [![Static Badge](https://img.shields.io/badge/English-%40hiddenSharp429-blue)](https://github.com/hiddenSharp429/STU-Alumni-Association-WeChat-Miniprogram)  |    [![Online Docs](https://img.shields.io/badge/Change%20Log-%40hiddenSharp429-brown)](https://github.com/hiddenSharp429/STU-Alumni-Association-WeChat-Miniprogram/blob/master/docs/ChangeLog.md)
   
 </div>
 
